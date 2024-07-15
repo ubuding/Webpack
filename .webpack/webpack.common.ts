@@ -15,7 +15,7 @@ export default (env: ENV) => {
       proxy: [
         {
           context: ["/oioweb"],
-          target: "https://api.oioweb.cn/",
+          target: process.env.PROXY_API,
           ws: false,
           secure: false,
           changeOrigin: true,
