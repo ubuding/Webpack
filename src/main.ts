@@ -1,30 +1,55 @@
-// import "style";
-import { useDarkmode } from "style";
+import { useDarkmode } from "@style/core";
+import { request, type Response } from "@request";
 
-const Button = document.createElement("div");
-Button.classList.add(
-  "rounded-lg",
-  "border",
-  "border-solid",
-  "border-sky-400",
-  "p-2",
-  "py-3",
-  "cursor-pointer",
-  "relative",
-  "shadow-md",
-  "shadow-sky-500/50",
-  "hover:bg-sky-400",
-  "hover:text-white"
-);
-Button.innerHTML = `
-Change Theme
-`;
-
-Button.onclick = function () {
+window.onload = function () {
   const darkMode = useDarkmode();
-  darkMode.toggle();
-};
+  const Button = document.createElement("div");
+  Button.classList.add(
+    "rounded-full",
+    "p-2",
+    "cursor-pointer",
+    "shadow-md",
+    "shadow-[var(--primary-color)]",
+    "absolute",
+    "top-2",
+    "right-2"
+  );
+  Button.innerHTML = darkMode.value === "light" ? "☀️" : "🔮";
 
-const root = document.getElementById("root");
-root?.classList.add("flex", "justify-center", "items-center", "rounded-2");
-root?.appendChild(Button);
+  Button.onclick = function () {
+    darkMode.toggle();
+    Button.innerHTML = darkMode.value === "light" ? "☀️" : "🔮";
+  };
+
+  const Axios = document.createElement("div");
+  Axios.classList.add(
+    "rounded-lg",
+    "border",
+    "border-solid",
+    "border-[var(--primary-color)]",
+    "p-2",
+    "py-3",
+    "cursor-pointer",
+    "relative",
+    "shadow-md",
+    "shadow-[var(--primary-color)]",
+    "hover:bg-[var(--primary-color)]",
+    "hover:text-white"
+  );
+  Axios.innerHTML = "Axios";
+
+  const getYiyan = (): Response<{
+    author: string;
+  }> => {
+    return request.get("/oioweb/api/common/yiyan");
+  };
+
+  Axios.onclick = function () {
+    getYiyan().then((resp) => console.log(resp.result.author));
+  };
+
+  const root = document.getElementById("root");
+  root?.classList.add("flex", "justify-center", "items-center", "rounded-2");
+  root?.appendChild(Button);
+  root?.appendChild(Axios);
+};

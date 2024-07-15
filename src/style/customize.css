@@ -3,32 +3,12 @@ body,
 body #root {
   width: 100vw;
   height: 100vh;
+  color: var(--text-color);
+  background-color: var(--bg-color);
 }
 
 body {
   box-sizing: border-box;
   overflow: hidden;
   user-select: none;
-}
-
-@font-face {
-  font-family: "Orbitron";
-  font-style: normal;
-  src: url("/public/fonts/Orbitron.ttf");
-}
-
-body {
-  font-family: "Orbitron" !important;
-}
-
-::-webkit-scrollbar {
-  display: none !important;
-}
-
-::-webkit-scrollbar-track {
-  display: none !important;
-}
-
-::-webkit-scrollbar-thumb {
-  display: none !important;
 }

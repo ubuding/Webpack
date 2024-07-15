@@ -1,6 +1,6 @@
 {
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx"],
-  "exclude": ["node_modules", "iconfont"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts"],
+  "exclude": ["node_modules"],
   "compilerOptions": {
     "target": "es2016",
     "lib": ["DOM", "es2016"],
@@ -9,8 +9,8 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "style/*": ["./src/style/*"],
-      "request": ["./src/request.ts"]
+      "@style/*": ["./src/style/*"],
+      "@request": ["./src/request.ts"]
     },
     "types": ["node", "webpack", "webpack-env"],
     "esModuleInterop": true,

@@ -1,29 +1,41 @@
-import axios from "axios";
+import axios, { type AxiosResponse } from "axios";
 const instance = axios.create({
   baseURL: "",
   timeout: 60000,
+  headers: {
+    "Content-Type": "application/json;charset=utf-8",
+  },
 });
 
 instance.interceptors.request.use(
-  function (config) {
+  (config) => {
+    const accessToken = localStorage.getItem("token");
+    if (accessToken) {
+      config.headers.Authorization = "Bearer " + accessToken;
+    }
     return config;
   },
-  function (error) {
+  (error) => {
     return Promise.reject(error);
   }
 );
 
 instance.interceptors.response.use(
-  function (response) {
+  (response: AxiosResponse) => {
     const { status, data } = response;
     if (status === 200) return data;
 
     return Promise.reject(new Error("请求失败!"));
   },
-  function (error) {
-    console.error(error.code);
+  (error) => {
     return Promise.reject(error);
   }
 );
 
 export const request = instance;
+
+export type Response<T> = Promise<{
+  code: number;
+  message: string;
+  result: T;
+}>;

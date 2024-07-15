@@ -32,7 +32,7 @@ export default (env: ENV) => {
     module: {
       rules: [
         {
-          test: /\.[jt]sx?$/,
+          test: /\.[jt]s?$/,
           exclude: /(node_modules)/,
           loader: "babel-loader",
         },
@@ -83,10 +83,10 @@ export default (env: ENV) => {
       ],
     },
     resolve: {
-      extensions: [".tsx", ".ts", ".js"],
+      extensions: [".ts", ".js"],
       alias: {
-        style: path.resolve(__dirname, "../src/style"),
-        request: path.resolve(__dirname, "../src/request.ts"),
+        "@style": path.resolve(__dirname, "../src/style"),
+        "@request": path.resolve(__dirname, "../src/request.ts"),
       },
     },
     plugins: [
