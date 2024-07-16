@@ -1,15 +1,15 @@
 # Webpack
 
-> A front-end framework without a technology stack
+> A dependency-free front-end framework based on webpack
 
 ## Request
 
-> Integrates `axios` with webpack for proxy requests
+> Use `axios` with `@request` with webpack proxy
 
 ## Theme Scheme
 
 > Natively implement monitoring system themes.
-> Through `useDarkmode` you can get the theme and change it
+> Through `useDarkmode` in `@style/core` you can get the theme and change it
 
 ## ENV
 
@@ -19,5 +19,5 @@
 
 > Style processing through `tailwindcss`
 
-![image](https://github.com/ubuding/Webpack/blob/ubuding/README/dark.jpg)
-![image](https://github.com/ubuding/Webpack/blob/ubuding/README/light.jpg)
+![image](https://github.com/ubuding/Webpack/blob/ubuding/README/dark.png)
+![image](https://github.com/ubuding/Webpack/blob/ubuding/README/light.png)
