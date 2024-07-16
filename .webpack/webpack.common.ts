@@ -85,6 +85,7 @@ export default (env: ENV) => {
     resolve: {
       extensions: [".ts", ".js"],
       alias: {
+        "@assets": path.resolve(__dirname, "../src/assets"),
         "@style": path.resolve(__dirname, "../src/style"),
         "@request": path.resolve(__dirname, "../src/request.ts"),
       },

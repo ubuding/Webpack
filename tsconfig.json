@@ -9,6 +9,7 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
+      "@assets/*": ["./src/assets/*"],
       "@style/*": ["./src/style/*"],
       "@request": ["./src/request.ts"]
     },

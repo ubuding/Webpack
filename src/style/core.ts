@@ -2,9 +2,7 @@
 import "./config/normalize.css";
 import "./config/tailwind.css";
 import "./config/scrollbar.css";
-
-/** @Fonts font*/
-import "./fonts/fonts.css";
+import "./config/fonts.css";
 
 /** @Customized Customized Configuration */
 import "./customize.css";

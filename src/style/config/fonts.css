@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Orbitron";
   font-style: normal;
-  src: url("./Orbitron.ttf");
+  src: url("@assets/fonts/Orbitron.ttf");
 }
 
 body {
