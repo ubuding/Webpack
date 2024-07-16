@@ -1,8 +1,10 @@
 /** @Config Basic style configuration */
 import "./config/normalize.css";
 import "./config/tailwind.css";
-import "./config/fonts.css";
 import "./config/scrollbar.css";
+
+/** @Fonts font*/
+import "./fonts/fonts.css";
 
 /** @Customized Customized Configuration */
 import "./customize.css";
