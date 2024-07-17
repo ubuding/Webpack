@@ -55,7 +55,6 @@ window.onload = function () {
     "mx-auto",
     "bg-white",
     "text-black",
-    "cursor-pointer",
     "relative",
     "shadow-md",
     "shadow-[var(--primary-color)]",
