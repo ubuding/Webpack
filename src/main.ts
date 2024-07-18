@@ -3,22 +3,22 @@ import { request, type Response } from "@request";
 
 window.onload = function () {
   const darkMode = useDarkmode();
-  const Button = document.createElement("div");
-  Button.classList.add(
+  const Theme = document.createElement("div");
+  Theme.classList.add(
     "rounded-full",
     "p-2",
     "cursor-pointer",
     "shadow-md",
-    "shadow-[var(--primary-color)]",
+    "shadow-primary",
     "absolute",
     "top-2",
     "right-2",
   );
-  Button.innerHTML = darkMode.value === "light" ? "☀️" : "🔮";
+  Theme.innerHTML = darkMode.value === "light" ? "☀️" : "🔮";
 
-  Button.onclick = function () {
+  Theme.onclick = function () {
     darkMode.toggle();
-    Button.innerHTML = darkMode.value === "light" ? "☀️" : "🔮";
+    Theme.innerHTML = darkMode.value === "light" ? "☀️" : "🔮";
   };
 
   const Axios = document.createElement("div");
@@ -27,7 +27,7 @@ window.onload = function () {
     "p-2",
     "cursor-pointer",
     "shadow-md",
-    "shadow-[var(--primary-color)]",
+    "shadow-primary",
     "absolute",
     "top-2",
     "right-14",
@@ -48,18 +48,18 @@ window.onload = function () {
   Introduction.classList.add(
     "w-[580px]",
     "h-[50px]",
+    "mx-auto",
+    "relative",
+    "bg-white",
+    "text-black",
     "rounded-full",
     "flex",
     "justify-center",
     "items-center",
-    "mx-auto",
-    "bg-white",
-    "text-black",
-    "relative",
     "shadow-md",
-    "shadow-[var(--primary-color)]",
+    "shadow-primary",
     "cursor-pointer",
-    "hover:bg-[var(--primary-color)]",
+    "hover:bg-primary",
     "hover:text-white",
   );
   Introduction.innerHTML =
@@ -71,7 +71,7 @@ window.onload = function () {
 
   const root = document.getElementById("root");
   root?.classList.add("flex", "justify-center", "items-center", "rounded-2");
-  root?.appendChild(Button);
+  root?.appendChild(Theme);
   root?.appendChild(Axios);
   root?.appendChild(Introduction);
 };
